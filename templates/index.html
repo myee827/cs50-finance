@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+        <table class="table table-striped" action="/">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">Holdings</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in stocks %}
+    <tr>
+      <td>{{ stock.symbol }}</td>
+      <td>{{ stock.shares }}</td>
+      <td>{{ stock.price }}</td>
+      <td>{{ stock.holdings }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td>CASH</td>
+      <td colspan="2"></td>
+      <td>{{ money }}</td>
+    </tr>
+    
+    <tfoot>
+      <td>TOTAL</td>
+      <td colspan="2"></td>
+      <td><strong>$10,000</strong></td>
+    </tfoot>
+  </tbody>
+</table>
+
+    
+{% endblock %}
